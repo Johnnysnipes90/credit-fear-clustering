@@ -1,6 +1,20 @@
 # Credit Fear Clustering: Exploring Household Financial Behavior
 This notebook explores household financial behavior using data from the Survey of Consumer Finances (SCF). My goal is to segment households into distinct groups based on credit fearfulness, analyzing characteristics such as assets, income, race, age, and debt.
 
+## Overview
+
+This Dash application performs K-Means clustering on a dataset, allowing users to explore high-variance features and determine whether to trim them before clustering. It also provides interactive visualizations, including a bar plot of feature variance and a scatter plot of clustered data.
+
+## Features
+
+- High Variance Feature Analysis: Displays a bar plot of high-variance features to help decide if trimming is necessary.
+
+- K-Means Clustering: Implements clustering with selectable k values.
+
+- PCA for Dimensionality Reduction: Uses Principal Component Analysis (PCA) for visualization.
+
+- Interactive Dashboard: Built with Dash for real-time user interaction.
+
 The project follows these key steps:
 ✅ Exploratory Data Analysis (EDA) – Understanding trends and distributions
 ✅ Unsupervised Learning (Clustering) – Grouping households into meaningful clusters
@@ -38,8 +52,7 @@ cd credit-fear-clustering
 
 ### 2️⃣ Set up a virtual environment
 python -m venv venv
-source venv/Scripts/activate  # Windows
-# source venv/bin/activate    # macOS/Linux
+source venv/Scripts/activate
 
 ### 3️⃣ Install dependencies
 pip install -r requirements.txt
@@ -47,7 +60,40 @@ pip install -r requirements.txt
 ### 4️⃣ Running the Jupyter Notebook
 jupyter lab
 
-### 5️⃣ Running the Dashboard (Streamlit)
-cd dashboards
-streamlit run app.py
+### 5️⃣ Running the Dashboard
+if __name__ == '__main__':
+    app.run_server(debug=True)
 
+
+## Screenshots
+
+1. High Variance Feature Bar Plot
+
+This plot helps in deciding whether to trim high-variance features before clustering.
+
+
+
+2. Scatter Plot of Clustered Data
+
+A PCA-based scatter plot visualizing the different clusters formed by K-Means.
+
+
+## Dependencies
+
+Ensure you have the following installed:
+
+pip install dash pandas scikit-learn matplotlib plotly
+
+## Customization
+
+Modify app.py to load your specific dataset.
+
+Adjust clustering parameters inside get_model_metrics().
+
+## Contributing
+
+Feel free to fork the repository, create a new branch, and submit pull requests for improvements or new features.
+
+## License
+
+This project is licensed under the MIT License.
