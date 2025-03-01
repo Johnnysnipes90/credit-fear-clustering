@@ -70,12 +70,14 @@ if __name__ == '__main__':
 1. High Variance Feature Bar Plot
 
 This plot helps in deciding whether to trim high-variance features before clustering.
-
-
+![Dashboard](images/variance.png)
+*Dashboard showing stock trends and predictions.*
 
 2. Scatter Plot of Clustered Data
 
 A PCA-based scatter plot visualizing the different clusters formed by K-Means.
+![Prediction](images/scatterplot.png)
+*Stock price volatility prediction view.*
 
 
 ## Dependencies
